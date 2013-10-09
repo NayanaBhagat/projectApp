@@ -5,8 +5,8 @@ class ProjectsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @projects = Project.all
-    @projects_user = current_user.projects
+    @project = Project.all
+   # @project_user = current_user.projects
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @projects }
@@ -47,7 +47,9 @@ class ProjectsController < ApplicationController
   # POST /projects
   # POST /projects.json
   def create
-    @project = current_user.projects.build(params[:project])
+     @project = Project.new(params[:project])
+    @users = User.where(:id => params[:user_name])
+    @project.users << @users
 
     respond_to do |format|
       if @project.save

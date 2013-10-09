@@ -32,6 +32,7 @@
 <%= link_to 'New Project', new_project_path %>
 <% else %>
 <h1> Projects </h1>
+<%= @project.users %>
 <% @projects_user.each do |project| %>
   <tr>
     <td><%= project.name %></td>
