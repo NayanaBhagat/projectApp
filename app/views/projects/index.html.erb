@@ -3,7 +3,8 @@
 <% if current_user.admin? %>
 <h1>Listing projects</h1>
 
-<table>
+<table id="projects">
+<thead>
   <tr>
     <th>Name</th>
     <th>Start date</th>
@@ -13,18 +14,20 @@
     <th></th>
     <th></th>
   </tr>
-
-<% @projects.each do |project| %>
+</thead>
+<tbody>
+<% @project.each do |project| %>
   <tr>
     <td><%= project.name %></td>
     <td><%= project.start_date %></td>
     <td><%= project.end_date %></td>
-    <td><%= project.user_name %></td>
+    <td><%= project.users.map(&:lname).join(', ') %></td>
     <td><%= link_to 'Show', project %></td>
     <td><%= link_to 'Edit', edit_project_path(project) %></td>
     <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
@@ -32,13 +35,27 @@
 <%= link_to 'New Project', new_project_path %>
 <% else %>
 <h1> Projects </h1>
-<%= @project.users %>
+
+<table id="projects">
+<thead>
+  <tr>
+    <th>Name</th>
+    <th>Start date</th>
+    <th>End date</th>
+    <th>Emoployees name</th>
+    </tr>
+    </thead>
+    <tbody>
 <% @projects_user.each do |project| %>
   <tr>
     <td><%= project.name %></td>
     <td><%= project.start_date %></td>
     <td><%= project.end_date %></td>
+    <td><%= project.users.map(&:lname).join(', ') %></td>
+    </tr>
     <% end %>
+    </tbody>
+
 <% end %>
 
 <% else %>
@@ -46,3 +63,4 @@
 <%= link_to "Sign up", new_user_registration_path, :method => :get,class: "button" %>
 
 <% end %> 
+</table>

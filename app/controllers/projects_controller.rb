@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
 
   def index
     @project = Project.all
-   # @project_user = current_user.projects
+    @projects_user = current_user.projects
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @projects }
@@ -17,7 +17,6 @@ class ProjectsController < ApplicationController
   # GET /projects/1.json
   def show
     @project = Project.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @project }
@@ -51,6 +50,8 @@ class ProjectsController < ApplicationController
     @users = User.where(:id => params[:user_name])
     @project.users << @users
 
+   
+
     respond_to do |format|
       if @project.save
         format.html { redirect_to @project, notice: 'Project was successfully created.' }
@@ -66,10 +67,14 @@ class ProjectsController < ApplicationController
   # PUT /projects/1.json
   def update
     @project = Project.find(params[:id])
-
+      @users = User.where(:id => params[:user_name])
+    puts "in update"
+    @project.users.destroy_all
+    @project.users << @users
+    
     respond_to do |format|
       if @project.update_attributes(params[:project])
-        format.html { redirect_to @project, notice: 'Project was successfully updated.' }
+        format.html { redirect_to @project, notice: 'Project was successfully updated.'}
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
