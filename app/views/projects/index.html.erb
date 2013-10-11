@@ -21,7 +21,7 @@
     <td><%= project.name %></td>
     <td><%= project.start_date %></td>
     <td><%= project.end_date %></td>
-    <td><%= project.users.map(&:lname).join(', ') %></td>
+    <td><%= project.users.map(&:fname).join(', ') %></td>
     <td><%= link_to 'Show', project %></td>
     <td><%= link_to 'Edit', edit_project_path(project) %></td>
     <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -42,7 +42,6 @@
     <th>Name</th>
     <th>Start date</th>
     <th>End date</th>
-    <th>Emoployees name</th>
     </tr>
     </thead>
     <tbody>
@@ -51,7 +50,6 @@
     <td><%= project.name %></td>
     <td><%= project.start_date %></td>
     <td><%= project.end_date %></td>
-    <td><%= project.users.map(&:lname).join(', ') %></td>
     </tr>
     <% end %>
     </tbody>
