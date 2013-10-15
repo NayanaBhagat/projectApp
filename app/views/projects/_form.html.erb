@@ -17,17 +17,17 @@
   </div>
   <div class="field">
     <%= f.label :start_date %><br />
-    <%= f.date_select :start_date %>
+    <%= f.date_select :start_date,:start_year => 1920, :end_year => 2013 %>
   </div>
   <div class="field">
     <%= f.label :end_date %><br />
-    <%= f.date_select :end_date %>
+    <%= f.date_select :end_date,:start_year => 1920, :end_year => 2013 %>
   </div>
   <div class="field">
     <%= f.label :user_name %><br />
     <%= select_tag 'user_name' ,  options_from_collection_for_select(User.all, 'id', 'fname', @project.users.map{ |j| j.id }), :multiple => true  %> 
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'button' %>
   </div>
 <% end %>

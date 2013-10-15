@@ -16,13 +16,11 @@
   </div>
   <div >
     <%= f.label :empNo %><br />
-    <%= f.number_field :empNo %>
+    <%= f.text_field :empNo %>
   </div>
   <div >
     <%= f.label :dob %><br />
-    <div class="small-6 large-2 columns">
     <%= f.date_select :dob,:start_year => 1920, :end_year => 2013 %>
-    </div>
   </div>
   <div >
     <%= f.label :gender %><br />
