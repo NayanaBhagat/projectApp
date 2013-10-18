@@ -32,7 +32,7 @@ gem 'devise'
 
 
 gem 'zurb-foundation'
-gem 'jquery-tablesorter'
+gem 'turbolinks'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

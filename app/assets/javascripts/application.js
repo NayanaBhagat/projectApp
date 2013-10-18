@@ -11,9 +11,11 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
-//= require_tree .
 //= require jquery_ujs
 //= require dataTables/jquery.dataTables
+//= require foundation
+//= require turbolinks
+//= require_tree .
 
 $(function(){ $(document).foundation(); });
 

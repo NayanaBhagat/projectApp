@@ -22,7 +22,7 @@
   <nav class="top-bar">
   <ul class="title-area">
     <li class="name">
-      <h1><%= link_to "Project app" %></a></h1>
+      <h1><%= link_to "Project app", root_url %></a></h1>
     </li>
   </ul>
   <section class="top-bar-section">
@@ -30,9 +30,7 @@
       
       <%  if user_signed_in? %>
       <li class="divider"></li>
-      <li><%= link_to "Welcome" %></li>
-      <li><%= link_to  current_user.fname%></li>
-      <li><%= link_to current_user.lname%></li>
+      <li><%= link_to "Welcome "+ current_user.fname + "!"%></li>
       <li class="divider"></li>
       <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
       <% else %>
@@ -42,8 +40,7 @@
     </ul>
   </div>
 </nav>
-<script type="text/javascript" src="assets/javascripts/jquery-latest.js"></script> 
-<script type="text/javascript" src="assets/javascripts/jquery.tablesorter.js"></script> 
+
   </head>
 
 
@@ -53,5 +50,8 @@
 
     
     <%= javascript_include_tag "application" %>
+
+
+   
   </body>
 </html>
