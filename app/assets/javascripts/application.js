@@ -16,6 +16,6 @@
 //= require foundation
 //= require turbolinks
 //= require_tree .
-
+config.assets.initialize_on_precompile = false
 $(function(){ $(document).foundation(); });
 

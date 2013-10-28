@@ -28,9 +28,10 @@ group :assets do
   gem 'jquery-datatables-rails' 
 end
 
+
 gem 'jquery-rails'
 gem 'devise'
-
+gem 'jquery-datatables-rails' 
 
 gem 'zurb-foundation'
 gem 'turbolinks'
