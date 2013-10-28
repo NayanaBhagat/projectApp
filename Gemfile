@@ -13,6 +13,7 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'rspec-rails'
 end
 # Gems used only for assets and not required
 # in production environments by default.
@@ -33,6 +34,7 @@ gem 'devise'
 
 gem 'zurb-foundation'
 gem 'turbolinks'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

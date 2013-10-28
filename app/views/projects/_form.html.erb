@@ -26,7 +26,7 @@
   </div>
   <div class="field">
     <%= f.label :user_name %><br />
-    <%= select_tag 'user_name' ,  options_from_collection_for_select(User.all, 'id', 'fname', @project.users.map{ |j| j.id }), :multiple => true  %> 
+    <%= select_tag 'user_name' ,  options_from_collection_for_select(all_users(), 'id', 'fname', all_users(@projects)), :multiple => true  %> 
   </div>
   <div class="actions">
     <%= f.submit class: 'button' %>

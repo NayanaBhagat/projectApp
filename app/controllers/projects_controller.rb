@@ -27,8 +27,6 @@ class ProjectsController < ApplicationController
   # GET /projects/new.json
   def new
     @project = Project.new
-    @emp_names = []
-    User.all.each  {|user| @emp_names << "#{user.fname} #{user.lname}"  }
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @project }
@@ -38,9 +36,6 @@ class ProjectsController < ApplicationController
   # GET /projects/1/edit
   def edit
     @project = Project.find(params[:id])
-     @emp_names = []
-    User.all.each  {|user| @emp_names << "#{user.fname} #{user.lname}"  }
-
   end
 
   # POST /projects
