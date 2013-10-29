@@ -30,7 +30,9 @@
       
       <%  if user_signed_in? %>
       <li class="divider"></li>
-      <li><%= link_to "Welcome "+ current_user.fname + "!"%></li>
+      <li ><%= link_to "Welcome "+ current_user.fname + "!"%></li>
+      <li class="divider"></li>
+      <li><%= link_to "Edit Details", edit_user_registration_path, :method => :get %></li>
       <li class="divider"></li>
       <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
       <% else %>

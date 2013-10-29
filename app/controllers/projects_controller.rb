@@ -91,13 +91,6 @@ class ProjectsController < ApplicationController
   end
 
   def display_projects
-    @user = User.find(params[:id])
-    @project_name = Project.where(:empNo => @user.empNo).select(:name)
-    @projects= [] 
-    @project_name.each  {|project| @projects << project.name}
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @user }
-    end
-  end
+    
+      end
 end

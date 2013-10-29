@@ -1,44 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+<div class="large-6 columns">
 
-<p>
-  <b>Fname:</b>
-  <%= @user.fname %>
-</p>
-
-<p>
-  <b>Lname:</b>
-  <%= @user.lname %>
-</p>
-
-<p>
-  <b>Empno:</b>
-  <%= @user.empNo %>
-</p>
-
-<p>
-  <b>Dob:</b>
-  <%= @user.dob %>
-</p>
-
-<p>
-  <b>Gender:</b>
-  <%= @user.gender %>
-</p>
-
-<p>
-  <b>Address:</b>
-  <%= @user.address %>
-</p>
-
-<p>
-  <b>Hobbies:</b>
-  <%= @user.hobbies %>
-</p>
-
-<p>
-  <b>Projects:</b>
-  <%= @projects.join(',') %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<h1>Users</h1>
+<table id="users">
+<thead>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+  </tr>
+</thead>
+<tbody>
+<% User.all.each do |user| %>
+  <tr>
+    <td><%= user.fname %></td>
+    <td><%= user.lname %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+</div>
+</div>

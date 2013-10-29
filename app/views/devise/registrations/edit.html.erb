@@ -19,8 +19,6 @@
     <%= f.number_field :empNo %>
   </div>
   <div >
-    <div class="row">
-<div class="large-6 columns">
     <%= f.label :dob %><br />
     <%= f.date_select :dob,:start_year => 1920, :end_year => 2013 %>
   </div>
@@ -36,7 +34,7 @@
   </div>
   <div >
     <%= f.label :hobbies %>:</br>
-    <%= f.select :hobbies, [ 'Reading', 'Singing', 'Dancing'],  :multiple => true %></br>
+    <%= f.select :hobbies, [ 'Reading', 'Singing', 'Dancing','Sports'],  :multiple => true %></br>
   </br>
   </div>
 

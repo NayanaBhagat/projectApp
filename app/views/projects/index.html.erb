@@ -4,6 +4,9 @@
 <% if user_signed_in? %>
 
 <% if current_user.admin? %>
+</br>
+</br>
+
 <h1>Listing projects</h1>
 
 <table id="projects">
@@ -36,7 +39,12 @@
 <br />
 <br />
 <br />
-<%= link_to 'New Project', new_project_path %>
+<%= link_to 'New Project', new_project_path, class: "button" %>
+<br/>
+<br/>
+<br/>
+<%= button_to("USER INDEX PAGE", :action => "display_user") %>
+
 <% else %>
 <h1> Projects </h1>
 
