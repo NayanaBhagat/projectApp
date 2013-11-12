@@ -26,15 +26,17 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'jquery-datatables-rails' 
+  gem 'jquery_datepicker'
+  
 end
 
 
 gem 'jquery-rails'
 gem 'devise'
 gem 'jquery-datatables-rails' 
-
+gem 'jquery-ui-rails'
 gem 'zurb-foundation'
-gem 'turbolinks'
+
 
 
 # To use ActiveModel has_secure_password

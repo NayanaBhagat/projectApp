@@ -6,3 +6,15 @@ $('#projects').dataTable()
 
 jQuery -> 
 $('#users').dataTable()
+
+
+jQuery ->
+$('#project_start_date').datepicker()
+
+
+jQuery ->
+$('#project_end_date').datepicker()
+
+
+jQuery ->
+$('#user_dob').datepicker()({dateFormat: 'yyyy-mm-dd'})
