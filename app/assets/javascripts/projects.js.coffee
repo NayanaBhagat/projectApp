@@ -9,11 +9,11 @@ $('#users').dataTable()
 
 
 jQuery ->
-$('#project_start_date').datepicker()
+$('#project_start_date').datepicker()({dateFormat: 'yyyy-mm-dd'})
 
 
 jQuery ->
-$('#project_end_date').datepicker()
+$('#project_end_date').datepicker()({dateFormat: 'yyyy-mm-dd'})
 
 
 jQuery ->
